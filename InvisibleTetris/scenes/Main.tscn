@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=4 uid="uid://cyv5gxoocnsrb"]
+
+[ext_resource type="Script" uid="uid://c5sa7fouf8ojg" path="res://scenes/Main.gd" id="1_673he"]
+[ext_resource type="Texture2D" uid="uid://c58ywactpelx0" path="res://assets/bck.png" id="1_fy72x"]
+[ext_resource type="Script" uid="uid://b5rqmmnn743wu" path="res://scenes/Menu.gd" id="3_6blfw"]
+[ext_resource type="TileSet" uid="uid://dkqwqts8mgb6i" path="res://squre.tres" id="4_34eus"]
+[ext_resource type="Texture2D" uid="uid://dthhqj70j1l03" path="res://assets/quit1.png" id="4_jnxma"]
+[ext_resource type="Texture2D" uid="uid://cfira0aerfjx6" path="res://assets/quit2.png" id="5_f33hs"]
+[ext_resource type="Texture2D" uid="uid://bnf65phni25a6" path="res://assets/new1.png" id="7_j7swd"]
+[ext_resource type="Texture2D" uid="uid://cjxpg484ki5a" path="res://assets/new2.png" id="9_cku47"]
+[ext_resource type="AudioStream" uid="uid://bwl6l3utxedbc" path="res://assets/Song.wav" id="10_am3lp"]
+[ext_resource type="AudioStream" uid="uid://10nenifbfnni" path="res://assets/Song1.wav" id="11_5lcnk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_varv6"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_ikab5"]
+font_size = 25
+
+[sub_resource type="SystemFont" id="SystemFont_cmt0c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cy6l7"]
+font = SubResource("SystemFont_cmt0c")
+font_size = 25
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_673he")
+metadata/_edit_horizontal_guides_ = [348.0]
+metadata/_edit_vertical_guides_ = [419.0]
+
+[node name="Bck" type="Sprite2D" parent="."]
+texture = ExtResource("1_fy72x")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="tile" type="Node2D" parent="."]
+position = Vector2(60, 60)
+
+[node name="Dead" type="TileMapLayer" parent="tile"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAP//AAACAAAAADABAP//AAACAAAAADACAP//AAACAAAAADADAP//AAACAAAAADAEAP//AAACAAAAADAFAP//AAACAAAAADAGAP//AAACAAAAADAHAP//AAACAAAAADAIAP//AAACAAAAADAJAP//AAACAAAAADAKAP//AAAAAAEAADD/////AAAAAAEAAFD//wAAAAACAAAAAFD//wEAAAACAAAAAFD//wIAAAACAAAAAFD//wMAAAACAAAAAFD//wQAAAACAAAAAFD//wUAAAACAAAAAFD//wYAAAACAAAAAFD//wcAAAACAAAAAFD//wgAAAACAAAAAFD//wkAAAACAAAAAFD//woAAAACAAAAAFD//wsAAAACAAAAAFD//wwAAAACAAAAAFD//w0AAAACAAAAAFD//w4AAAACAAAAAFD//w8AAAACAAAAAFD//xAAAAACAAAAAFD//xEAAAACAAAAAFD//xIAAAACAAAAAFD//xMAAAACAAAAAFD//xQAAAAAAAEAAAAAABQAAAACAAAAAAABABQAAAACAAAAAAACABQAAAACAAAAAAADABQAAAACAAAAAAAEABQAAAACAAAAAAAFABQAAAACAAAAAAAGABQAAAACAAAAAAAHABQAAAACAAAAAAAIABQAAAACAAAAAAAJABQAAAACAAAAAAAKABQAAAAAAAEAAGAKABMAAAACAAAAAGAKABIAAAACAAAAAGAKABEAAAACAAAAAGAKAA8AAAACAAAAAGAKABAAAAACAAAAAGAKAA4AAAACAAAAAGAKAA0AAAACAAAAAGAKAAwAAAACAAAAAGAKAAsAAAACAAAAAGAKAAoAAAACAAAAAGAKAAkAAAACAAAAAGAKAAgAAAACAAAAAGAKAAcAAAACAAAAAGAKAAYAAAACAAAAAGAKAAUAAAACAAAAAGAKAAQAAAACAAAAAGAKAAMAAAACAAAAAGAKAAIAAAACAAAAAGAKAAEAAAACAAAAAGAKAAAAAAACAAAAAGA=")
+tile_set = ExtResource("4_34eus")
+
+[node name="Live" type="TileMapLayer" parent="tile"]
+use_parent_material = true
+tile_set = ExtResource("4_34eus")
+
+[node name="Schrodinger" type="TileMapLayer" parent="tile"]
+use_parent_material = true
+tile_set = ExtResource("4_34eus")
+
+[node name="NEXT" type="Label" parent="."]
+offset_left = 395.0
+offset_top = 58.0
+offset_right = 459.0
+offset_bottom = 93.0
+text = "NEXT
+"
+label_settings = SubResource("LabelSettings_varv6")
+
+[node name="Sco" type="Label" parent="."]
+offset_left = 396.0
+offset_top = 310.0
+offset_right = 476.0
+offset_bottom = 345.0
+text = "SCORE
+"
+label_settings = SubResource("LabelSettings_ikab5")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 420.0
+offset_top = 350.0
+offset_right = 536.0
+offset_bottom = 430.0
+label_settings = SubResource("LabelSettings_cy6l7")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_6blfw")
+
+[node name="Quit" type="TextureButton" parent="Menu"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 591.0
+offset_right = 535.0
+offset_bottom = 645.0
+texture_normal = ExtResource("4_jnxma")
+texture_pressed = ExtResource("5_f33hs")
+texture_hover = ExtResource("5_f33hs")
+
+[node name="New" type="TextureButton" parent="Menu"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 517.0
+offset_right = 535.0
+offset_bottom = 571.0
+texture_normal = ExtResource("7_j7swd")
+texture_pressed = ExtResource("9_cku47")
+texture_hover = ExtResource("9_cku47")
+
+[node name="lo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_am3lp")
+
+[node name="xo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_5lcnk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Menu/Quit" to="Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu/New" to="." method="_on_new_pressed"]

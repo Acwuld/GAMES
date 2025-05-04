@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://byal30nbvyuaj"]
+
+[ext_resource type="Script" uid="uid://xoyrqjjwe4a2" path="res://script/brick.gd" id="1_6vugh"]
+[ext_resource type="Shader" uid="uid://babrcrtdqcgt1" path="res://shader/texture.gdshader" id="2_xk4d0"]
+[ext_resource type="Texture2D" uid="uid://cds188okrhath" path="res://sprite/brick.png" id="2_yey8w"]
+[ext_resource type="Texture2D" uid="uid://cwn1o8qqrog0f" path="res://sprite/stone.png" id="3_uwn2w"]
+[ext_resource type="Texture2D" uid="uid://sgogt60elg5s" path="res://sprite/water1.png" id="4_ch0qi"]
+[ext_resource type="Texture2D" uid="uid://bbfm2r2i0pams" path="res://sprite/water2.png" id="5_m8kj2"]
+[ext_resource type="Texture2D" uid="uid://bd0y0ocgrtunh" path="res://sprite/bush.png" id="6_oxgxv"]
+[ext_resource type="Texture2D" uid="uid://b2c3aca8mjyxs" path="res://sprite/ice.png" id="7_2m3rl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fi0a"]
+size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2087h"]
+resource_local_to_scene = true
+shader = ExtResource("2_xk4d0")
+shader_parameter/block = Color(0.1, 0.1, 0.1, 0.1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkvqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yey8w")
+}],
+"loop": false,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uwn2w")
+}],
+"loop": false,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ch0qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m8kj2")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oxgxv")
+}],
+"loop": false,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2m3rl")
+}],
+"loop": false,
+"name": &"4",
+"speed": 5.0
+}]
+
+[node name="brick" type="Area2D"]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("1_6vugh")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6fi0a")
+
+[node name="ani" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_2087h")
+sprite_frames = SubResource("SpriteFrames_pkvqv")
+animation = &"0"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

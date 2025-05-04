@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=3 uid="uid://2djq2yi0g1at"]
+
+[ext_resource type="Script" uid="uid://i82cifpx51cm" path="res://script/bonus.gd" id="1_t0y4r"]
+[ext_resource type="Texture2D" uid="uid://dlup6wnkvojs8" path="res://sprite/bonus_boat.png" id="2_wag74"]
+[ext_resource type="Texture2D" uid="uid://c0b72fllgltkw" path="res://sprite/bonus_clock.png" id="3_7mfur"]
+[ext_resource type="Texture2D" uid="uid://echuecpqscjd" path="res://sprite/bonus_grenade.png" id="4_2argh"]
+[ext_resource type="Texture2D" uid="uid://c1wcuyuw04cto" path="res://sprite/bonus_gun.png" id="5_hwin5"]
+[ext_resource type="Texture2D" uid="uid://cn2kphop28vq4" path="res://sprite/bonus_helmet.png" id="6_dgse8"]
+[ext_resource type="Texture2D" uid="uid://to40renv07bg" path="res://sprite/bonus_shovel.png" id="7_6grsb"]
+[ext_resource type="Texture2D" uid="uid://bm4fbu71tyn1r" path="res://sprite/bonus_star.png" id="8_nwcwb"]
+[ext_resource type="Texture2D" uid="uid://dq4hpdlajvsf0" path="res://sprite/bonus_tank.png" id="9_627h3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpbu5"]
+size = Vector2(10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_clqnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wag74")
+}],
+"loop": false,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7mfur")
+}],
+"loop": false,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2argh")
+}],
+"loop": false,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hwin5")
+}],
+"loop": false,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dgse8")
+}],
+"loop": false,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_6grsb")
+}],
+"loop": false,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nwcwb")
+}],
+"loop": false,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_627h3")
+}],
+"loop": false,
+"name": &"7",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_jgrm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ani:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1mm5m"]
+resource_name = "blink"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ani:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dheqe"]
+_data = {
+&"RESET": SubResource("Animation_jgrm5"),
+&"blink": SubResource("Animation_1mm5m")
+}
+
+[node name="bonus" type="Area2D"]
+z_index = 2
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_t0y4r")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rpbu5")
+
+[node name="ani" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_clqnd")
+animation = &"0"
+
+[node name="player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dheqe")
+}
+autoplay = "blink"

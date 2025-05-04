@@ -1,0 +1,177 @@
+[gd_scene load_steps=23 format=3 uid="uid://byy266digvt5g"]
+
+[ext_resource type="PackedScene" uid="uid://c7wxacaat6sif" path="res://scene/tank.tscn" id="1_8woun"]
+[ext_resource type="Script" uid="uid://b4f75eiceb17r" path="res://script/player.gd" id="2_rftgp"]
+[ext_resource type="Texture2D" uid="uid://d1jenonmeio8m" path="res://sprite/appear_1.png" id="3_lqvh3"]
+[ext_resource type="Shader" uid="uid://d2ggg1lt6olq5" path="res://shader/enemyColor.gdshader" id="3_n1wfc"]
+[ext_resource type="Texture2D" uid="uid://sudkex1j7sy" path="res://sprite/appear_2.png" id="4_wka44"]
+[ext_resource type="Texture2D" uid="uid://bki5muefxfujn" path="res://sprite/appear_3.png" id="5_igln5"]
+[ext_resource type="Texture2D" uid="uid://4xgqw8ittved" path="res://sprite/appear_4.png" id="6_8by4h"]
+[ext_resource type="Texture2D" uid="uid://dtgxa046nb50y" path="res://sprite/tank_main3.png" id="7_iul55"]
+[ext_resource type="Texture2D" uid="uid://2uklydg3s0v2" path="res://sprite/tank_main5.png" id="7_mywm5"]
+[ext_resource type="Texture2D" uid="uid://fdd0wn3qcctg" path="res://sprite/tank_main4.png" id="8_a1m04"]
+[ext_resource type="Texture2D" uid="uid://clraqo1n28pjb" path="res://sprite/tank_main6.png" id="8_bxs07"]
+[ext_resource type="Texture2D" uid="uid://dkeos8gfxx3b4" path="res://sprite/tank_main1.png" id="8_lmj6e"]
+[ext_resource type="Texture2D" uid="uid://cksrke0au6sxc" path="res://sprite/tank_main2.png" id="9_5x7qg"]
+[ext_resource type="Texture2D" uid="uid://dyrpetf6eqmjc" path="res://sprite/tank_main7.png" id="13_370p8"]
+[ext_resource type="Texture2D" uid="uid://buv4wmgn4e2es" path="res://sprite/tank_main8.png" id="14_bkj5x"]
+[ext_resource type="AudioStream" uid="uid://dbpt374hsmow4" path="res://sound/idle.wav" id="15_upwd4"]
+[ext_resource type="AudioStream" uid="uid://ctd8p32scv7t7" path="res://sound/walk.wav" id="16_x4piy"]
+[ext_resource type="AudioStream" uid="uid://dyb1dajcg6ywn" path="res://sound/hit.ogg" id="17_ibr1t"]
+[ext_resource type="AudioStream" uid="uid://dkoavuw04m0qb" path="res://sound/bullet_shot.ogg" id="18_k5w60"]
+[ext_resource type="AudioStream" uid="uid://do5t020cfjr1e" path="res://sound/slide.wav" id="19_3hin4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5c6r6"]
+resource_local_to_scene = true
+shader = ExtResource("3_n1wfc")
+shader_parameter/ischange = false
+shader_parameter/oldColor1 = Color(1, 0.901961, 0.639216, 1)
+shader_parameter/oldColor2 = Color(1, 0.607843, 0.231373, 1)
+shader_parameter/oldColor3 = Color(0.545098, 0.447059, 0, 1)
+shader_parameter/newColor1 = Color(0.701961, 1, 0.811765, 1)
+shader_parameter/newColor2 = Color(0, 0.576471, 0.231373, 1)
+shader_parameter/newColor3 = Color(0, 0.317647, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xhp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lqvh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wka44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_igln5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8by4h")
+}],
+"loop": true,
+"name": &"flash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mywm5")
+}],
+"loop": false,
+"name": &"large",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mywm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bxs07")
+}],
+"loop": true,
+"name": &"large_run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_iul55")
+}],
+"loop": false,
+"name": &"medium",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_iul55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a1m04")
+}],
+"loop": true,
+"name": &"medium_run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lmj6e")
+}],
+"loop": false,
+"name": &"small",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lmj6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5x7qg")
+}],
+"loop": true,
+"name": &"small_run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_370p8")
+}],
+"loop": false,
+"name": &"super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_370p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bkj5x")
+}],
+"loop": true,
+"name": &"super_run",
+"speed": 8.0
+}]
+
+[node name="tank" instance=ExtResource("1_8woun")]
+script = ExtResource("2_rftgp")
+
+[node name="ani" parent="." index="0"]
+material = SubResource("ShaderMaterial_5c6r6")
+sprite_frames = SubResource("SpriteFrames_1xhp6")
+animation = &"large"
+
+[node name="ship" parent="." index="3"]
+animation = &"0"
+
+[node name="left" parent="." index="7"]
+collision_mask = 7
+
+[node name="right" parent="." index="8"]
+collision_mask = 7
+
+[node name="top" parent="." index="9"]
+collision_mask = 7
+
+[node name="bottom" parent="." index="10"]
+collision_mask = 7
+
+[node name="idle" type="AudioStreamPlayer" parent="." index="11"]
+stream = ExtResource("15_upwd4")
+volume_db = -16.0
+bus = &"sfx"
+
+[node name="walk" type="AudioStreamPlayer" parent="." index="12"]
+stream = ExtResource("16_x4piy")
+volume_db = -16.0
+bus = &"sfx"
+
+[node name="hit" type="AudioStreamPlayer" parent="." index="13"]
+stream = ExtResource("17_ibr1t")
+bus = &"sfx"
+
+[node name="fire" type="AudioStreamPlayer" parent="." index="14"]
+stream = ExtResource("18_k5w60")
+bus = &"sfx"
+
+[node name="slide" type="AudioStreamPlayer" parent="." index="15"]
+stream = ExtResource("19_3hin4")
+bus = &"sfx"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="initTimer" to="." method="_on_init_timer_timeout"]

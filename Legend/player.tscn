@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://o6i78v1625ow"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_6iy8t"]
+[ext_resource type="Script" uid="uid://crkxmhudoby6d" path="res://Player.gd" id="1_6iy8t"]
 [ext_resource type="Texture2D" uid="uid://btmjiorun0rmb" path="res://Asset/red1.png" id="2_k3v75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqm1i"]
@@ -170,10 +170,10 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vssfj"]
 _data = {
-"RESET": SubResource("Animation_an6cp"),
-"idle": SubResource("Animation_2b67w"),
-"jump": SubResource("Animation_rvint"),
-"run": SubResource("Animation_blej2")
+&"RESET": SubResource("Animation_an6cp"),
+&"idle": SubResource("Animation_2b67w"),
+&"jump": SubResource("Animation_rvint"),
+&"run": SubResource("Animation_blej2")
 }
 
 [node name="Player" type="CharacterBody2D"]

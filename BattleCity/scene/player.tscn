@@ -154,24 +154,19 @@ collision_mask = 7
 [node name="idle" type="AudioStreamPlayer" parent="." index="11"]
 stream = ExtResource("15_upwd4")
 volume_db = -16.0
-bus = &"sfx"
 
 [node name="walk" type="AudioStreamPlayer" parent="." index="12"]
 stream = ExtResource("16_x4piy")
 volume_db = -16.0
-bus = &"sfx"
 
 [node name="hit" type="AudioStreamPlayer" parent="." index="13"]
 stream = ExtResource("17_ibr1t")
-bus = &"sfx"
 
 [node name="fire" type="AudioStreamPlayer" parent="." index="14"]
 stream = ExtResource("18_k5w60")
-bus = &"sfx"
 
 [node name="slide" type="AudioStreamPlayer" parent="." index="15"]
 stream = ExtResource("19_3hin4")
-bus = &"sfx"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="initTimer" to="." method="_on_init_timer_timeout"]

@@ -102,7 +102,7 @@ autoHide = false
 
 [node name="player" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_80y2n")
+&"": SubResource("AnimationLibrary_80y2n")
 }
 
 [connection signal="timeout" from="produceTimer" to="." method="_on_produce_timer_timeout"]

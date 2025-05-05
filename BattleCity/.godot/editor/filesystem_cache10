@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746329031
+::res://::1746367492
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::539445394547598458::1746197433::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1746283214::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile/TextFile::-1::1746283214::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::8194644257363929688::1746197433::1746197490::1::::<><><>0<>0<>c80b6422f66ecbc4790a0df973030f95<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://autoload/::1746283046
-game.gd::GDScript::7997443658460038264::1746283046::0::1::::<>Node<><>0<>0<><>::
+game.gd::GDScript/GDScript::7997443658460038264::1746283046::0::1::::<>Node<><>0<>0<><>::
 ::res://font/::1746197490
 arialbd.ttf::FontFile/FontFile::3701347487232303725::1746197433::1746197490::1::::<><><>0<>0<>b75dcf419e18ee738da1bf00b59a053e<>res://.godot/imported/arialbd.ttf-c3eea39993930022ad0e2a5b11cb0fb4.fontdata::
 prstartk.ttf::FontFile/FontFile::7805012785032116046::1746197433::1746197490::1::::<><><>0<>0<>6d77614154bdf5d62a6fd3a0557cb4ce<>res://.godot/imported/prstartk.ttf-3af4f7eb534fc3e2acfcccba9d78ee76.fontdata::
@@ -69,7 +69,7 @@ sounds_util.tscn::PackedScene/PackedScene::345226739744335326::1746197501::0::1:
 splash.tscn::PackedScene/PackedScene::5371995237335831884::1746197501::0::1::::<><><>0<>0<><>::uid://k8gtoi7odnta::::res://script/splash.gd<>uid://cwcvesg7003t2::::res://scene/game.tscn<>uid://bwtt6taomj0ql::::res://theme/theme.tres
 tank.tscn::PackedScene/PackedScene::7065697270299512325::1746197501::0::1::::<><><>0<>0<><>::uid://dl8b85s7fdy45::::res://script/tank.gd<>uid://badfjmkjws1sn::::res://sprite/invincible1.png<>uid://cfhsxqxnvsxcy::::res://sprite/invincible2.png<>uid://ddpfxw1bc6cxi::::res://sprite/ship1.png<>uid://by1fexs7rfi2u::::res://sprite/ship2.png
 tile.tscn::PackedScene/PackedScene::2602859762649637891::1746197501::0::1::::<><><>0<>0<><>::uid://dk0cu3jxluog7::::res://script/tile.gd<>uid://cds188okrhath::::res://sprite/brick.png<>uid://cwn1o8qqrog0f::::res://sprite/stone.png<>uid://sgogt60elg5s::::res://sprite/water1.png<>uid://bd0y0ocgrtunh::::res://sprite/bush.png<>uid://b2c3aca8mjyxs::::res://sprite/ice.png
-welcome.tscn::PackedScene::7415073511028898028::1746283046::0::1::::<><><>0<>0<><>::uid://dv2qrerx2gaw4::::res://script/welcome.gd<>uid://bwtt6taomj0ql::::res://theme/theme.tres<>uid://clrr0hb76me5g::::res://sprite/battle_city.png<>uid://dkeos8gfxx3b4::::res://sprite/tank_main1.png<>uid://cksrke0au6sxc::::res://sprite/tank_main2.png
+welcome.tscn::PackedScene/PackedScene::7415073511028898028::1746283046::0::1::::<><><>0<>0<><>::uid://dv2qrerx2gaw4::::res://script/welcome.gd<>uid://bwtt6taomj0ql::::res://theme/theme.tres<>uid://clrr0hb76me5g::::res://sprite/battle_city.png<>uid://dkeos8gfxx3b4::::res://sprite/tank_main1.png<>uid://cksrke0au6sxc::::res://sprite/tank_main2.png
 ::res://script/::1746283046
 auto_hide_label.gd::GDScript/GDScript::493031915580711588::1746197434::0::1::::<>Control<><>0<>0<><>::
 base.gd::GDScript/GDScript::7989284529566424853::1746197434::0::1::::<>Area2D<><>0<>0<><>::
@@ -80,7 +80,7 @@ editmap.gd::GDScript/GDScript::4317684582412410582::1746197434::0::1::::<>Node2D
 enemy.gd::GDScript/GDScript::6613132140614962879::1746197434::0::1::::<>Area2D<><>0<>0<><>::
 explode.gd::GDScript/GDScript::5471048994202589474::1746197434::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
 gameover.gd::GDScript/GDScript::6230432872662552474::1746197434::0::1::::<>Node2D<><>0<>0<><>::
-gameScene.gd::GDScript::5079207149293705255::1746283046::0::1::::<>Node2D<><>0<>0<><>::
+gameScene.gd::GDScript/GDScript::5079207149293705255::1746283046::0::1::::<>Node2D<><>0<>0<><>::
 map.gd::GDScript/GDScript::7505054186725466825::1746197434::0::1::::<>Node2D<><>0<>0<><>::
 map_view.gd::GDScript/GDScript::3398982986827875187::1746197434::0::1::::<>Node2D<><>0<>0<><>::
 mini_map.gd::GDScript/GDScript::474162986138446213::1746197434::0::1::::<>Node2D<><>0<>0<><>::

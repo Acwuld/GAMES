@@ -1,0 +1,6 @@
+res://scene/welcome.tscn
+res://script/map.gd
+res://scene/player.tscn
+res://scene/game.tscn
+res://scene/gameover.tscn
+res://scene/map.tscn
